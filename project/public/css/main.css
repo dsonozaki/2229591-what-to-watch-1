@@ -585,6 +585,32 @@ main {
   .catalog__button:hover {
     border-color: rgba(217, 202, 116, 0.5); }
 
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.error-container img{
+  height: 100px;
+  margin-bottom: 30px;
+}
+
+.error-container h1 {
+  font-size: 36px;
+  font-weight: normal;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.error-container a {
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
 .copyright {
   text-align: center;
   font-size: 14px;
@@ -1403,6 +1429,8 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column; }
+
+
 
 .user-page__head {
   margin-bottom: 40px;
