@@ -1,7 +1,12 @@
-export function Player(): JSX.Element {
+import {Film} from '../../mocks/films';
+import {useParams} from 'react-router-dom';
+
+export function Player(props: {films: Film[]}): JSX.Element {
+  const id = Number(useParams().id);
+  const current = props.films.find((film:Film)=> film.id === id);
   return (
     <div className="player">
-      <video src="#" className="player__video" poster="img/player-poster.jpg"></video>
+      <video src={current?.video} className="player__video" poster={current?.background}></video>
 
       <button type="button" className="player__exit">Exit</button>
 
