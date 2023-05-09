@@ -12,7 +12,7 @@ export function FilmsList(props: {films: Film[]}): JSX.Element {
   return (
     <div className="catalog__films-list">
       {props.films.slice(0,8).map((film:Film) => (
-        <FilmCard key={film.id} src={film.src} alt={film.alt} id={film.id} setId={()=>changeActiveCard(film.id)} resetId={()=>changeActiveCard(-1)}/>
+        <FilmCard key={film.id} src={film.src} alt={film.alt} id={film.id} setId={()=>changeActiveCard(film.id)} resetId={()=>changeActiveCard(-1)} video={film.video}/>
       ))}
     </div>
   );
