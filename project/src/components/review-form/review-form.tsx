@@ -4,16 +4,20 @@ export function ReviewForm(): JSX.Element {
   const [formData, setFormData] = useState({
     rating: 0,
     reviewText: '',
+  });
+  const [resultData,setResultData] = useState( {
     stars:false,
     text: false
   });
   const radioChangeHandle = (evt: ChangeEvent<HTMLInputElement>) => {
     const {name, value} = evt.target;
-    setFormData({...formData, [name]: value,stars: true});
+    setFormData({...formData, [name]: value});
+    setResultData({...resultData,stars: true});
   };
   const fieldChangeHandle = (evt: ChangeEvent<HTMLTextAreaElement>) => {
     const {name, value} = evt.target;
-    setFormData({...formData, [name]: value,text:  value.length >= 50 && value.length <= 400});
+    setFormData({...formData, [name]: value});
+    setResultData({...resultData,text:  value.length >= 50 && value.length <= 400});
   };
 
 
@@ -80,7 +84,7 @@ export function ReviewForm(): JSX.Element {
           >
           </textarea>
           <div className="add-review__submit">
-            <button disabled={!(formData.text && formData.stars)} className="add-review__btn" type="submit">Post</button>
+            <button disabled={!(resultData.text && resultData.stars)} className="add-review__btn" type="submit">Post</button>
           </div>
 
         </div>
