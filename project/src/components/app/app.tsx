@@ -7,9 +7,11 @@ import {PageNotFound} from '../../pages/page-404/page-404';
 import {Movie} from '../../pages/movie/movie';
 import {AddReview} from '../../pages/add-review/add-review';
 import {Player} from '../../pages/player/player';
-import {Film} from '../../mocks/films';
+import {Film} from '../../types/film';
+import {Review} from '../../types/review';
 
-function App(props: { films: Film[]}): JSX.Element {
+
+function App(props: { films: Film[]; reviews: Review[]}): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
@@ -23,7 +25,7 @@ function App(props: { films: Film[]}): JSX.Element {
           <Route path='mylist' element={<PrivateRouter hasAccess={false}>{<MyList films={props.films}/>}</PrivateRouter>}/>
           <Route path='films/'>
             <Route path=':id/'>
-              <Route index element={<Movie films={props.films}/>}/>
+              <Route index element={<Movie films={props.films} reviews={props.reviews}/>}/>
               <Route path="review" element={<AddReview films={props.films}/>}/>
             </Route>
           </Route>

@@ -1,7 +1,7 @@
 import {Header} from '../../components/header/header';
 import {Footer} from '../../components/footer/footer';
-import {Film} from '../../mocks/films';
 import {FilmsList} from '../../components/films-list/films-list';
+import {Film} from '../../types/film';
 
 export function MyList(props: {films: Film[]}): JSX.Element {
   return (

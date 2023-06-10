@@ -1,6 +1,6 @@
-import {Film} from '../../mocks/films';
 import {Link, useParams} from 'react-router-dom';
 import {ReviewForm} from '../../components/review-form/review-form';
+import {Film} from '../../types/film';
 
 export function AddReview(props: {films: Film[]}): JSX.Element {
   const id = Number(useParams().id);

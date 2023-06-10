@@ -1,5 +1,5 @@
-import {Film} from '../../mocks/films';
 import {useParams} from 'react-router-dom';
+import {Film} from '../../types/film';
 
 export function Player(props: {films: Film[]}): JSX.Element {
   const id = Number(useParams().id);
