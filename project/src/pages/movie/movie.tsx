@@ -1,27 +1,12 @@
 import {Header} from '../../components/header/header';
 import {Footer} from '../../components/footer/footer';
 import {Link, useParams} from 'react-router-dom';
-import {Film} from '../../mocks/films';
 import {FilmsList} from '../../components/films-list/films-list';
+import {Review} from '../../types/review';
+import {Film} from '../../types/film';
+import {Tabs} from '../../components/tabs/tabs';
 
-
-const getRating = (rating: number) => {
-  if (rating < 3) {
-    return 'Bad';
-  }
-  if (rating < 5) {
-    return 'Normal';
-  }
-  if (rating < 8) {
-    return 'Good';
-  }
-  if (rating < 10) {
-    return 'Very good';
-  }
-  return 'Awesome';
-};
-
-export function Movie(props: {films: Film[]}): JSX.Element {
+export function Movie(props: {films: Film[]; reviews: Review[]}): JSX.Element {
   const id = Number(useParams().id);
   const current = props.films.findIndex((film:Film)=> film.id === id);
   const film: Film = props.films[current];
@@ -75,39 +60,7 @@ export function Movie(props: {films: Film[]}): JSX.Element {
                 width="218" height="327"
               />
             </div>
-
-            <div className="film-card__desc">
-              <nav className="film-nav film-card__nav">
-                <ul className="film-nav__list">
-                  <li className="film-nav__item film-nav__item--active">
-                    <a href="#" className="film-nav__link">Overview</a>
-                  </li>
-                  <li className="film-nav__item">
-                    <a href="#" className="film-nav__link">Details</a>
-                  </li>
-                  <li className="film-nav__item">
-                    <a href="#" className="film-nav__link">Reviews</a>
-                  </li>
-                </ul>
-              </nav>
-
-              <div className="film-rating">
-                <div className="film-rating__score">{film.ratingScore}</div>
-                <p className="film-rating__meta">
-                  <span className="film-rating__level">{getRating(film.ratingScore)}</span>
-                  <span className="film-rating__count">{`${film.ratings} ratings`}</span>
-                </p>
-              </div>
-
-              <div className="film-card__text">
-                <p>{`${film.description}`}</p>
-
-                <p className="film-card__director"><strong>{`Director: ${film.director}`}</strong></p>
-
-                <p className="film-card__starring"><strong>{`Starring: ${film.starring}`}</strong>
-                </p>
-              </div>
-            </div>
+            <Tabs film={film} reviews={props.reviews} />
           </div>
         </div>
       </section>
@@ -115,7 +68,7 @@ export function Movie(props: {films: Film[]}): JSX.Element {
         <section className="catalog catalog--like-this">
           <h2 className="catalog__title">More like this</h2>
 
-          <FilmsList films = {otherFilms.slice(0,4)}/>
+          <FilmsList films = {otherFilms.filter((filmElement)=>filmElement.genre === film.genre).slice(0,4)}/>
         </section>
 
         <Footer/>

@@ -1,6 +1,6 @@
-import {Film} from '../../mocks/films';
 import {FilmCard} from '../film-card/film-card';
 import {useState} from 'react';
+import {Film} from '../../types/film';
 
 export function FilmsList(props: {films: Film[]}): JSX.Element {
   const [currentId, setId] = useState(-1);

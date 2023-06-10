@@ -1,18 +1,4 @@
-export type Film = {
-  id: number;
-  src: string;
-  alt: string;
-  background:string;
-  poster:string;
-  ratingScore: number;
-  genre: string;
-  year: number;
-  description: string;
-  ratings: number;
-  starring: string;
-  director: string;
-  video: string;
-}
+import {Film} from '../types/film';
 
 export const films: Film[] = [
   { id:0,
@@ -27,7 +13,8 @@ export const films: Film[] = [
     ratings: 240,
     starring: 'Bill Murray, Edward Norton, Jude Law, Willem Dafoe and other',
     director: 'Wes Anderson',
-    video: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4'
+    video: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    length: 99
   },
   { id:1,
     src:'img/bohemian-rhapsody.jpg',
@@ -41,7 +28,8 @@ export const films: Film[] = [
     ratings: 240,
     starring: 'Bill Murray, Edward Norton, Jude Law, Willem Dafoe and other',
     director: 'Wes Anderson',
-    video: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4'
+    video: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    length: 99
   },
   { id:2,
     src:'img/macbeth.jpg',
@@ -55,7 +43,8 @@ export const films: Film[] = [
     ratings: 240,
     starring: 'Bill Murray, Edward Norton, Jude Law, Willem Dafoe and other',
     director: 'Wes Anderson',
-    video: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4'
+    video: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    length: 99
   },
   { id:3,
     src:'img/aviator.jpg',
@@ -69,7 +58,8 @@ export const films: Film[] = [
     ratings: 240,
     starring: 'Bill Murray, Edward Norton, Jude Law, Willem Dafoe and other',
     director: 'Wes Anderson',
-    video: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4'
+    video: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    length: 99
   },
   { id:4,
     src:'img/we-need-to-talk-about-kevin.jpg',
@@ -83,7 +73,8 @@ export const films: Film[] = [
     ratings: 240,
     starring: 'Bill Murray, Edward Norton, Jude Law, Willem Dafoe and other',
     director: 'Wes Anderson',
-    video: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4'
+    video: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    length: 99
   },
   { id:5,
     src:'img/what-we-do-in-the-shadows.jpg',
@@ -97,7 +88,8 @@ export const films: Film[] = [
     ratings: 240,
     starring: 'Bill Murray, Edward Norton, Jude Law, Willem Dafoe and other',
     director: 'Wes Anderson',
-    video: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4'
+    video: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    length: 99
   },
   { id:6,
     src:'img/revenant.jpg',
@@ -111,7 +103,8 @@ export const films: Film[] = [
     ratings: 240,
     starring: 'Bill Murray, Edward Norton, Jude Law, Willem Dafoe and other',
     director: 'Wes Anderson',
-    video: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4'
+    video: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    length: 99
   },
   { id:7,
     src:'img/johnny-english.jpg',
@@ -125,6 +118,7 @@ export const films: Film[] = [
     ratings: 240,
     starring: 'Bill Murray, Edward Norton, Jude Law, Willem Dafoe and other',
     director: 'Wes Anderson',
-    video: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4'
+    video: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    length: 99
   }
 ];
